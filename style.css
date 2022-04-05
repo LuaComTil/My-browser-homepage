@@ -1,0 +1,97 @@
+html, body {
+    height: 100%;
+}
+body {
+    overflow: hidden;
+}
+.background {
+    content: url(background.jpg);
+    background-color: rgb(0, 2, 110);
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+.column-box {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    margin: 0 2%;
+}
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.list__anchor{
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,0.5018382352941176) 100%);
+    border:solid 1px rgb(255, 255, 255);
+    box-shadow: 0 0 32px 0 white;
+    border-radius: 124px;
+    padding: 32px;
+}
+.logo {
+    height: 60px;
+    width: 60x;
+}
+/*CLOCK------------------------------------------------------------------------------------------------------------------------*/
+.clock{
+    align-items: flex-end;
+    display: flex;
+}
+.wrapper {
+    animation: animate 1.5s linear infinite;
+    background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
+    border-radius: 10px;
+    height: 100px;
+    margin-bottom: 10%;
+    width: 360px;
+}
+.wrapper .display,
+.wrapper span {
+    border-radius: 10px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.wrapper .display{
+    background: #1b1b1b;
+    height: 85px;
+    position: absolute;
+    left: 50%;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 345px;
+    z-index: 999;
+}
+.wrapper .display #time {
+    background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
+    color: #fff;
+    font-size: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 85px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+@keyframes animate {
+    100%{
+        filter: hue-rotate(360deg);
+    }    
+}
+.wrapper span {
+    background: inherit;
+    height: 100%;
+    width: 100%;
+}
+.wrapper span:first-child{
+    filter: blur(7px);
+}
+.wrapper span:last-child{
+    filter: blur(20px);
+}
+#time {
+    font-family: 'poppins', sans-serif;
+}
